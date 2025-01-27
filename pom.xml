@@ -19,29 +19,24 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
+  
   <build>
-    <plugins>
-        <!-- JaCoCo Plugin -->
-        <plugin>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.8.7</version> <!-- Use the latest stable version -->
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>prepare-agent</goal>
-                    </goals>
-                </execution>
-                <execution>
-                    <goals>
-                        <goal>report</goal>
-                    </goals>
-                    <phase>verify</phase>
-                </execution>
-            </executions>
-        </plugin>
-    </plugins>
-</build>
+      <plugins>
+          <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>cobertura-maven-plugin</artifactId>
+              <version>2.7</version> <!-- Or latest version -->
+              <executions>
+                  <execution>
+                      <goals>
+                          <goal>instrument</goal>
+                          <goal>cobertura</goal>
+                      </goals>
+                  </execution>
+              </executions>
+          </plugin>
+      </plugins>
+  </build>
+
 
 </project>
